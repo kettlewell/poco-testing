@@ -1,15 +1,31 @@
 cmake_minimum_required(VERSION 3.5)
-project(POCO_APPSERVER)
+project(POCO_TESTING)
+
+option(POCO_TESTING_DBG "Turn debuggin on/off (default ON)" ON)
+if(POCO_TESTING_DBG)
+ message(STATUS "MSG --- POCO_TESTING_DEBUG is ON: " ${POCO_TESTING_DBG})
+endif(POCO_TESTING_DBG)
 
 set(CMAKE_BUILD_TYPE Release)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
+if(POCO_TESTING_DBG)
+ message(STATUS "MSG --- CMAKE_BUILD_TYPE: " ${CMAKE_BUILD_TYPE})
+ message(STATUS "MSG --- CMAKE_CXX_FLAGS: " ${CMAKE_CXX_FLAGS})
+endif(POCO_TESTING_DBG)
+
 ## Where to find the sources of your aplication
 set(APPLICATION_BASE_DIR /opt/git/poco-testing)
+if(POCO_TESTING_DBG)
+message(STATUS "MSG --- APPLICATION_BASE_DIR: " ${APPLICATION_BASE_DIR})
+message(STATUS "MSG --- POCO_TESTING_SOURCE_DIR: " ${POCO_TESTING_SOURCE_DIR})
+message(STATUS "MSG --- POCO_TESTING_BINARY_DIR: " ${POCO_TESTING_BINARY_DIR})
+message(STATUS "MSG --- CMAKE_CURRENT_SOURCE_DIR: " ${CMAKE_CURRENT_SOURCE_DIR})
+endif(POCO_TESTING_DBG)
 
 ## Target
-set(POCO_APPSERVER_SRCS main.cpp application_server.cpp)
-add_executable(appsrv ${POCO_APPSERVER_SRCS} )
+set(POCO_TESTING_SRCS main.cpp application_server.cpp)
+add_executable(appsrv ${POCO_TESTING_SRCS} )
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 ## Link libraries
