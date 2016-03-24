@@ -50,6 +50,19 @@ public:
         std::ostream& responseStream = response.send();
         responseStream << "Not Found\n";
     }
+  /*
+  void MyHandler::handleRequest(HTTPServerRequest& request,
+                                HTTPServerResponse& response)
+  {
+    response.setStatus(HTTPResponse::HTTP_OK);
+    response.setContentType("application/json");
+
+    std::ostream& ostr = response.send();
+    string send("true");
+    ostr << send;
+    response.setContentLength(send.size());
+  }
+  */
 };
 
 //
