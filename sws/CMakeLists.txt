@@ -1,5 +1,14 @@
-cmake_minimum_required (VERSION 2.8)
-project (Simple-Web-Server)
+#cmake_minimum_required (VERSION 2.8)
+#project (Simple-Web-Server)
+
+if(SANDBOX_DBG)
+ message(STATUS "MSG --- CMAKE_BUILD_TYPE: " ${CMAKE_BUILD_TYPE})
+ message(STATUS "MSG --- CMAKE_CXX_FLAGS: " ${CMAKE_CXX_FLAGS})
+ message(STATUS "MSG --- SANDBOX_SOURCE_DIR: " ${SANDBOX_SOURCE_DIR})
+ message(STATUS "MSG --- SANDBOX_BINARY_DIR: " ${SANDBOX_BINARY_DIR})
+ message(STATUS "MSG --- CMAKE_CURRENT_SOURCE_DIR: " ${CMAKE_CURRENT_SOURCE_DIR})
+endif(SANDBOX_DBG)
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g -Wall")
 
 if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
