@@ -1,4 +1,8 @@
 # -*- mode: gitignore; -*-
+
+# Build Directory
+**/build/**
+
 *~
 \#*\#
 /.emacs.desktop
@@ -69,8 +73,6 @@ flycheck_*.el
 *.out
 *.app
 
-# Build Directory
-build
 
 # Ignore tags created by etags, ctags, gtags (GNU global) and cscope
 TAGS
