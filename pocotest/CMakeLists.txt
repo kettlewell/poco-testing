@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.5)
-project(POCO_TESTING)
+# cmake_minimum_required(VERSION 3.5)
+# project(POCO_TESTING)
 
 option(POCO_TESTING_DBG "Turn debuggin on/off (default ON)" ON)
 
@@ -32,7 +32,7 @@ message(STATUS "MSG --- CMAKE_CURRENT_SOURCE_DIR: " ${CMAKE_CURRENT_SOURCE_DIR})
 endif(POCO_TESTING_DBG)
 
 # Source Files
-set(POCO_TESTING_SRCS main.cpp application_server.cpp)
+set(POCO_TESTING_SRCS src/main.cpp src/application_server.cpp)
 
 # Executable
 add_executable(appsrv ${POCO_TESTING_SRCS} )
