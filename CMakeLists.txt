@@ -33,5 +33,6 @@ if(SANDBOX_DBG)
 endif(SANDBOX_DBG)
 
 # include project sub directories
-add_subdirectory(sws)
-add_subdirectory(pocotest)
+# add_subdirectory(sws)
+# add_subdirectory(pocotest)
+subdirs(sws pocotest)
