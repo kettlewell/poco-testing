@@ -26,6 +26,7 @@ set(SOURCE_FILES
 # include_directories(${MyProject_SOURCE_DIR}/LibProject/inc)
 # link_directories(${MyProject_SOURCE_DIR}/LibProject/src)
 
+find_package(poco REQUIRED)
 
 add_executable(pocotest ${SOURCE_FILES} ${HEADER_FILES})
 
