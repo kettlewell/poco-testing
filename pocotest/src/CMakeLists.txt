@@ -20,12 +20,14 @@ set(HEADER_FILES
 set(SOURCE_FILES
   "${CMAKE_CURRENT_SOURCE_DIR}/application_server.cpp"
   "${CMAKE_CURRENT_SOURCE_DIR}/http_get.cpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp"
 )
 
 # I assume you want to use LibProject as a library in MainProject.
 # include_directories(${MyProject_SOURCE_DIR}/LibProject/inc)
 # link_directories(${MyProject_SOURCE_DIR}/LibProject/src)
 
+set(poco_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 find_package(poco REQUIRED)
 
 add_executable(pocotest ${SOURCE_FILES} ${HEADER_FILES})
